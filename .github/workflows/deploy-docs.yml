@@ -21,11 +21,11 @@ jobs:
       - name: Install dependencies
         run: |
           if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
+          yarn install --frozen-lockfile --legacy-peer-deps
           elif [ -e package-lock.json ]; then
-          npm ci
+          npm ci --legacy-peer-deps
           else
-          npm i
+          npm i --legacy-peer-deps
           fi
 
       - name: Build Storybook
